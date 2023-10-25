@@ -60,8 +60,8 @@ public class App {
 		pantallaLogin = new LoginView(this);
 		pantallaAltaUser = new AltaUserView(this);
 
-		pantallaConsulta = new ConsultarRegistroView(this);
-		pantallaNuevoRegistro = new NuevoRegistroView(this, usuarioConectado);
+		
+		
 
 		irAPantallaLogin();
 	}
@@ -87,7 +87,9 @@ public class App {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
 				irAPantallaLogin();
+				
 
 			}
 		};
@@ -161,12 +163,14 @@ public class App {
 	}
 
 	public void irAPantallaConsultaRegistro() {
+		pantallaConsulta = new ConsultarRegistroView(this);
 		frame.setContentPane(pantallaConsulta);
 		menuBar.setVisible(true);
 		frame.revalidate();
 	}
 
 	public void irAPantallaNuevoRegistro() {
+		pantallaNuevoRegistro = new NuevoRegistroView(this, usuarioConectado);
 		frame.setContentPane(pantallaNuevoRegistro);
 		menuBar.setVisible(true);
 		frame.revalidate();

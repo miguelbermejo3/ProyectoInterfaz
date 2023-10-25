@@ -1,5 +1,6 @@
 package proyecto;
 
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,10 +8,7 @@ import javax.swing.table.AbstractTableModel;
 
 import proyecto.modelo.Registro;
 
-
-
-
-public class TableModel extends AbstractTableModel{
+public class TableModel extends AbstractTableModel {
 	/**
 	 * 
 	 */
@@ -21,7 +19,7 @@ public class TableModel extends AbstractTableModel{
 
 	private List<Registro> registros;
 	private List<String> columnas;
-	
+
 	public TableModel() {
 		registros = new ArrayList<>();
 		columnas = new ArrayList<>();
@@ -39,7 +37,7 @@ public class TableModel extends AbstractTableModel{
 	public int getColumnCount() {
 		return columnas.size();
 	}
-	
+
 	@Override
 	public String getColumnName(int column) {
 		return columnas.get(column);
@@ -49,8 +47,10 @@ public class TableModel extends AbstractTableModel{
 	public Object getValueAt(int rowIndex, int column) {
 		Registro registro = registros.get(rowIndex);
 		String nombreColumn = columnas.get(column);
+		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yy");
+
 		if (nombreColumn.equals("FECHA")) {
-			return registro.getFecha();
+			return formato.format(registro.getFecha());
 		}
 		if (nombreColumn.equals("HORAS")) {
 			return registro.getNumHoras();
@@ -58,7 +58,7 @@ public class TableModel extends AbstractTableModel{
 		if (nombreColumn.equals("TAREAS")) {
 			return registro.getDescripcion();
 		}
-		
+
 		return "ERROR";
 	}
 
@@ -73,9 +73,5 @@ public class TableModel extends AbstractTableModel{
 	public void setColumnas(List<String> columnas) {
 		this.columnas = columnas;
 	}
-	
-	
-	
-	
-	
+
 }

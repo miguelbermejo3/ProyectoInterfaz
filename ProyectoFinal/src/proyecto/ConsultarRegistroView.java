@@ -41,7 +41,6 @@ public class ConsultarRegistroView extends View{
 				modelo.fireTableDataChanged();
 				
 				
-				
 			}
 		});
 		btnRefrescar.setBounds(313, 253, 113, 23);
