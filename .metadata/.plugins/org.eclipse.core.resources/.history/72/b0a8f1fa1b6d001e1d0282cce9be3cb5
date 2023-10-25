@@ -1,0 +1,50 @@
+package proyecto;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+
+public abstract class LoginView extends View {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JTextField textField;
+	private JTextField textField_1;
+
+	public LoginView(App appController) {
+		super(appController);
+		setLayout(null);
+		
+		JLabel lblEmail = new JLabel("Email:");
+		lblEmail.setBounds(118, 46, 85, 19);
+		add(lblEmail);
+		
+		textField = new JTextField();
+		textField.setBounds(118, 76, 174, 20);
+		add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblPassword = new JLabel("Contraseña:");
+		lblPassword.setBounds(118, 107, 70, 14);
+		add(lblPassword);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(118, 132, 174, 20);
+		add(textField_1);
+		textField_1.setColumns(10);
+		
+		JButton btnEntrar = new JButton("ENTRAR");
+		btnEntrar.setBounds(216, 173, 89, 23);
+		add(btnEntrar);
+		
+		JButton btnSolicitarAcceso = new JButton("SOLICITAR ACCESO");
+		btnSolicitarAcceso.setBounds(184, 254, 131, 23);
+		add(btnSolicitarAcceso);
+		
+		JButton btnSalir = new JButton("SALIR");
+		btnSalir.setBounds(328, 254, 89, 23);
+		add(btnSalir);
+		
+	}
+}

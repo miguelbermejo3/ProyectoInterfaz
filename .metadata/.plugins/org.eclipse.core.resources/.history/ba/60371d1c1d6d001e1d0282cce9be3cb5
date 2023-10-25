@@ -1,0 +1,57 @@
+package proyecto;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+
+public class App {
+
+	private JFrame frame;
+	private LoginView pantallaLogin;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					App window = new App();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public App() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(200, 200, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		pantallaLogin = new LoginView(this);
+		
+		irAPantallaLogin();
+	}
+	
+	public void irAPantallaLogin() {
+
+		frame.setContentPane(pantallaLogin);
+		frame.revalidate();
+
+	}
+	
+	
+
+}

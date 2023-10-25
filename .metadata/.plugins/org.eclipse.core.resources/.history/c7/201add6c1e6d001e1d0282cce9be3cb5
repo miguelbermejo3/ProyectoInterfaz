@@ -1,0 +1,10 @@
+package proyecto;
+
+public class AltaUserView extends View {
+
+	public AltaUserView(App appController) {
+		super(appController);
+		
+	}
+
+}
