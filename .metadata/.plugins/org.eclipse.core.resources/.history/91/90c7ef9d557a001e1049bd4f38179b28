@@ -40,7 +40,6 @@ public class NuevoRegistroView extends View {
 
 		JComboBox<String> comboBoxFecha = new JComboBox<String>();
 		comboBoxFecha.setBounds(133, 121, 185, 22);
-		comboBoxFecha.setSelectedItem(null);
 		List<String> fechas = null;
 		fechas = appController.registroFechas();
 
@@ -90,11 +89,10 @@ public class NuevoRegistroView extends View {
 				registro.setDescripcion(textAreaTareas.getText());
 
 				appController.crearRegistro(registro);
-
+				
 				comboBoxFecha.setSelectedItem(null);
-				lblHoras.setText("");
-				sliderHoras.setValue(0);
-				textAreaTareas.setText("");
+				
+				
 
 			}
 		});

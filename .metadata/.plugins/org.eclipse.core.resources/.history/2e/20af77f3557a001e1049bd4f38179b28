@@ -90,11 +90,11 @@ public class NuevoRegistroView extends View {
 				registro.setDescripcion(textAreaTareas.getText());
 
 				appController.crearRegistro(registro);
-
+				
 				comboBoxFecha.setSelectedItem(null);
 				lblHoras.setText("");
 				sliderHoras.setValue(0);
-				textAreaTareas.setText("");
+				
 
 			}
 		});

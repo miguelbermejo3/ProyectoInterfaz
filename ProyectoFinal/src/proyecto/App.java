@@ -60,9 +60,6 @@ public class App {
 		pantallaLogin = new LoginView(this);
 		pantallaAltaUser = new AltaUserView(this);
 
-		
-		
-
 		irAPantallaLogin();
 	}
 
@@ -87,9 +84,8 @@ public class App {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+
 				irAPantallaLogin();
-				
 
 			}
 		};
